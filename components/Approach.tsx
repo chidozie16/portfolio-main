@@ -103,13 +103,21 @@ const Card = ({
 
       <AnimatePresence>
         {hovered && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="h-full w-full absolute inset-0"
-          >
-            {children}
-          </motion.div>
+          <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              style={{
+                height: "full",
+                width: "full",
+                position: "absolute",
+                inset: 0,
+              }}
+            >
+              {children}
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
